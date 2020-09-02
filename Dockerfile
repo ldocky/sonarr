@@ -23,5 +23,5 @@ sonarr
 EXPOSE 8989
 VOLUME /config
 
+CMD [tail -f /dev/null]
 
-ENTRYPOINT ["ping localhost"]
