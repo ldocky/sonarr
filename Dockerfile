@@ -1,9 +1,7 @@
 FROM ubuntu:focal
 MAINTAINER ldocky
 
-
 ENV DEBIAN_FRONTEND=noninteractive
-ENV XDG_CONFIG_HOME="/config/xdg"
 
 RUN apt-get update && apt-get install -y gnupg ca-certificates wget
 
@@ -22,7 +20,8 @@ RUN apt-get install -y \
 sonarr
 
 RUN apt-get autoremove -y && \ 
-  	apt-get clean
+  	apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 EXPOSE 8989
 VOLUME /config
