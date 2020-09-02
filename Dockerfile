@@ -17,10 +17,10 @@ apt-get update && \
 rm -rf repo-mediaarea_1.0-13_all.deb
 
 RUN apt-get install -y \
-sonarr
+    sonarr
 
 RUN apt-get autoremove -y && \ 
-  	apt-get clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 EXPOSE 8989
