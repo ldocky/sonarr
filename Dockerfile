@@ -15,15 +15,14 @@ echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | tee
 apt-get update
 RUN wget https://mediaarea.net/repo/deb/repo-mediaarea_1.0-13_all.deb && \
 dpkg -i repo-mediaarea_1.0-13_all.deb && \
-apt-get update
+apt-get update && \
+rm -rf repo-mediaarea_1.0-13_all.deb
 
 RUN apt-get install -y \
 sonarr
 
-RUN apt-get remove -y gnupg ca-certificates && \
-  	apt-get autoremove -y && \ 
+RUN apt-get autoremove -y && \ 
   	apt-get clean && \
-    rm -rf repo-mediaarea_1.0-13_all.deb
     
 EXPOSE 8989
 VOLUME /config
