@@ -22,7 +22,7 @@ RUN apt-get install -y \
 sonarr
 
 RUN apt-get autoremove -y && \ 
-  	apt-get clean && \
+  	apt-get clean
     
 EXPOSE 8989
 VOLUME /config
