@@ -23,4 +23,4 @@ sonarr
 EXPOSE 8989
 VOLUME /config
 
-CMD ["mono", "./usr/lib/sonarr/bin/Sonarr.exe"]
+CMD ["mono", "--debug", "./usr/lib/sonarr/bin/Sonarr.exe", "-nobrowser -data=/config"]
