@@ -18,5 +18,4 @@ EXPOSE 8989
 VOLUME /config
 
 
-ENTRYPOINT ["mono --debug NzbDrone.exe \
-	-nobrowser -data=/config"]
+ENTRYPOINT ["mono"]
