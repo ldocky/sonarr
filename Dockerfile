@@ -12,7 +12,7 @@ echo "deb https://apt.sonarr.tv/ubuntu focal main" | tee /etc/apt/sources.list.d
 apt-get update
 
 RUN apt-get install -y \
-install sonarr
+sonarr
 
 EXPOSE 8989
 VOLUME /config
