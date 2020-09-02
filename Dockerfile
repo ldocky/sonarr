@@ -20,6 +20,12 @@ apt-get update
 RUN apt-get install -y \
 sonarr
 
+RUN apt-get remove -y gnupg ca-certificates wget && \
+  	apt-get autoremove -y && \ 
+  	apt-get clean && \
+  	rm -rf /var/lib/apt/lists/* && \
+    rm -rf repo-mediaarea_1.0-13_all.deb
+    
 EXPOSE 8989
 VOLUME /config
 
