@@ -23,7 +23,6 @@ sonarr
 RUN apt-get remove -y gnupg ca-certificates && \
   	apt-get autoremove -y && \ 
   	apt-get clean && \
-  	rm -rf /var/lib/apt/lists/* && \
     rm -rf repo-mediaarea_1.0-13_all.deb
     
 EXPOSE 8989
